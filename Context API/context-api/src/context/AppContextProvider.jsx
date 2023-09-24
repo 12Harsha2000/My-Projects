@@ -6,7 +6,7 @@ class AppContextProvider extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        name:"I'm from Context API"
+        name:"I'm from Context API and I can also be accessed with func"
       };
     }
     render(){
