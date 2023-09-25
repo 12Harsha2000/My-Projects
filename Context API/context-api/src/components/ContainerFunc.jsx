@@ -4,9 +4,11 @@ import { AppContext } from "../context/AppContextProvider";
 export default function ContainerFunc() {
   return (
    <AppContext.Consumer>
-    {(name) => {
-       return <div>{name}</div>;
+    {({toggleAuth, isAuth }) => {
+       return (
+         <button onClick={toggleAuth}>{isAuth ? "Log out" : "Log In"}</button>
+       );
     }}
    </AppContext.Consumer>
    );
-  }
+  }   

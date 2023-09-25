@@ -6,12 +6,21 @@ class AppContextProvider extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        name:"I'm from Context API and I can also be accessed with func"
+        name:"I'm from Context API"
+        isAuth: false
       };
     }
+
+    toggleAuth = () => {
+      this.setState({
+       isAuth: this.state.isAuth
+      });
+    };
     render(){
+      const { isAuth } = this.state;
+      const { toggleAuth } = this;
       return 
-       <AppContext.Provider value={this.state.name}>
+       <AppContext.Provider value={{isAuth, toggleAuth }}>
          {this.props.children}
        </AppContext.Provider>;   
     }
